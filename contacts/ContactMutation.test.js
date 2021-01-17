@@ -17,7 +17,7 @@ describe('ContactMutation', () => {
       query: `
         mutation {
           createContact(
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoidXNlciIsImlhdCI6MTYxMDkwODM0NSwiZXhwIjoxNjEwOTExOTQ1fQ.ehtmVnmECRdaEVvM6vRUR02EZsA6OnUzImUQIPzep5A"
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoidXNlciIsImlhdCI6MTYxMDkxNTU0NiwiZXhwIjoxNjEwOTE5MTQ2fQ.Mccv8ifvSGtULjWbsVWt3B44CHk5aC4rFLhNZoPAmTs"
             newContact: {
               name: "Tester"
               phone_work: "07527244951"
