@@ -1,6 +1,7 @@
 # ChalkboardTest
 
 This is an API to serve as a backend phone book app for a Chalkboard Coding Challenge.
+Contact details: Matt Gear - matt.gear@live.co.uk - https://github.com/mattgear
 
 ## Project set up
 
@@ -41,10 +42,29 @@ Multiple users from the same household can sign up.
 
 ## Query a contact
 
-Example Query to find a list of contacts:  
+Example basic query to find a list of contacts:  
 query {  
  contactList {  
  name  
+ phone_work  
+ phone_home  
+ phone_mobile  
+ phone_other  
+ email_address  
+ mailing_address  
+ }  
+}
+
+With sorting and pagination
+query {  
+ contactList (
+sort: {
+field: NAME
+direction: DESC
+}
+pagination: 1
+) {
+name  
  phone_work  
  phone_home  
  phone_mobile  
@@ -92,3 +112,4 @@ mutation {
 In order to get the ContactMutation Tests to work a valid token must be put into the file. This is obviously not ideal and if I had more time would
 rework the resolver such that I could test without this.  
 I would also wire tests to a test DB instead of having them connected to dev.
+Furthermore after re-working the ContactQuery I would need to amend the tests for that but have ran out of time.
