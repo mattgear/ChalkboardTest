@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const TokenAuthentication = (token) => {
+const tokenAuthentication = (token) => {
   jwt.verify(token, 'secret', function (err, decoded) {
     if (err) {
       throw Error('You are not authorized');
@@ -8,4 +8,4 @@ const TokenAuthentication = (token) => {
   });
 };
 
-module.exports = TokenAuthentication;
+module.exports = tokenAuthentication;
