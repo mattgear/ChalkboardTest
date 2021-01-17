@@ -2,11 +2,13 @@ const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const { GraphQLObjectType, GraphQLSchema } = require('graphql');
 const ContactQuery = require('./contacts/ContactQuery');
+const TokenQuery = require('./auth/TokenQuery');
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQuery',
   fields: () => ({
     ...ContactQuery,
+    ...TokenQuery,
   }),
 });
 
