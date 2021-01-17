@@ -52,6 +52,9 @@ const ContactMutation = {
           return res;
         })
         .catch((err) => {
+          if (err.code === '23505') {
+            throw Error('Name and or email address already registered');
+          }
           return 'There was an error: ', err;
         });
 

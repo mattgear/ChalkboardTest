@@ -57,7 +57,7 @@ query {
 ## Authenticate a query
 
 For simiplicity I user generic { data: "user" } to the TokenQuery, rather than checking a users credentials.  
-Example query to get a token for authentication:
+Example query to get a token for authentication:  
 query {  
  token  
 }
@@ -67,7 +67,7 @@ I am leaving off authentication from Querying a contact to mock a read only acce
 ## Create a contact
 
 To create a contact you will need to have generated a token.  
-An example query is:
+An example query is:  
 mutation {  
  createContact(  
  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoidXNlciIsImlhdCI6MTYxMDkwODM0NSwiZXhwIjoxNjEwOTExOTQ1fQ.ehtmVnmECRdaEVvM6vRUR02EZsA6OnUzImUQIPzep5A"  
@@ -86,3 +86,9 @@ mutation {
  }  
  }  
 }
+
+## Notes on tests
+
+In order to get the ContactMutation Tests to work a valid token must be put into the file. This is obviously not ideal and if I had more time would
+rework the resolver such that I could test without this.  
+I would also wire tests to a test DB instead of having them connected to dev.
